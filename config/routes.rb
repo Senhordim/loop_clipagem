@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'page/index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :ad do
+    get 'dashboard/index'
+    root 'dashboard#index'
+  end
+
+  get 'page/index'
+  root to: 'page#index'
+
 end
