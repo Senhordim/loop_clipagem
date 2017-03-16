@@ -9,17 +9,8 @@
     <%= stylesheet_link_tag    'ad/ad', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-      <%= render 'ad/elements/header' %>
-      <%= render 'ad/elements/sidebar' %>
-      <%= yield %>
-      <%= render 'ad/elements/footer' %>
-      <%= render 'ad/elements/aside' %>
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
-    </div>
+  <body>
+    <%= yield %>
     <%= javascript_include_tag 'ad/ad', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
