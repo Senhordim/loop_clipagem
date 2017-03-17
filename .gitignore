@@ -25,6 +25,10 @@ config/secrets.yml
 /.bundle
 /vendor/bundle
 
+
+# Ignore templates
+/public/templates
+
 # these should all be checked in to normalize the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
