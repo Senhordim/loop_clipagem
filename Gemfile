@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-ionicons'
+  gem 'rails-assets-bootstrap-select'
+  gem 'rails-assets-bootstrap-toggle'
 end
 
 gem "font-awesome-rails"
@@ -31,6 +33,8 @@ gem 'devise'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'annotate'
 gem 'jquery-turbolinks'
+gem 'country_select'
+gem 'enumerize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
