@@ -26,9 +26,9 @@
               <% @vehicles.each do |vehicle| %>
                 <tr class="odd gradeX">
                   <td><%= vehicle.name %></td>
-                  <td><%= vehicle.vehicle_type %></td>
+                  <td><span class="label label-default"><%= vehicle.vehicle_type %></span></td>
                   <td><%= vehicle.publication_day %></td>
-                  <td class="center"><%= vehicle.created_at.strftime("%d/%m/%Y")  %></td>
+                  <td class="center"><%= vehicle.created_at.strftime("%d/%m/%Y") %></td>
                   <td class="center">
                     <%= link_to ad_vehicle_path(vehicle), class: 'btn btn-default btn-circle' do %>
                       <i class="fa fa-eye"></i>

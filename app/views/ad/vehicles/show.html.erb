@@ -32,7 +32,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><%= @vehicle.vehicle_type %></td>
+                <td><span class="label label-default"><%= @vehicle.vehicle_type %></span></td>
                 <td><%= @vehicle.publication_day %></td>
               </tr>
             </tbody>
@@ -48,7 +48,13 @@
             </thead>
             <tbody>
               <tr>
-                <td><%= @vehicle.national %></td>
+                <td>
+                  <% if @vehicle.national? %>
+                    <span class="label label-success">Sim</span>
+                  <% else %>
+                    <span class="label label-default">Não</span>
+                  <% end %>
+                </td>
                 <td><%= @vehicle.country %></td>
                 <td><%= @vehicle.state   %></td>
               </tr>
