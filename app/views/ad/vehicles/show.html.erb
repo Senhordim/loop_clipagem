@@ -15,7 +15,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="pull-right">
-                <%= link_to 'Cancelar', :back, class: 'btn btn-default' %>
+                <%= link_to 'Voltar', :back, class: 'btn btn-default' %>
                 <%= link_to 'Editar', edit_ad_vehicle_path  , class: 'btn btn-primary' %>
 
               </div>
@@ -70,8 +70,12 @@
             </thead>
             <tbody>
               <tr>
-                <td><%= @vehicle.url %></td>
-                <td><%= @vehicle.address %></td>
+                <td>
+                  <%= @vehicle.url.present? ? @vehicle.url : "Não informado" %>
+                </td>
+                <td>
+                  <%= @vehicle.address.present? ? @vehicle.address : "Não informado" %>
+                </td>
               </tr>
             </tbody>
           </table>
