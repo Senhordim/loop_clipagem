@@ -7,7 +7,7 @@ capybara-*.html
 /db/*.sqlite3-journal
 /public/system
 /public/AdminLTE-2.3.11
-/coverage/
+/coverage
 /spec/tmp
 **.orig
 rerun.txt
