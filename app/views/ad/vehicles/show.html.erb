@@ -17,7 +17,6 @@
               <div class="pull-right">
                 <%= link_to 'Voltar', :back, class: 'btn btn-default' %>
                 <%= link_to 'Editar', edit_ad_vehicle_path  , class: 'btn btn-primary' %>
-
               </div>
             </div>
           </div>
@@ -32,7 +31,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="label label-default"><%= @vehicle.vehicle_type %></span></td>
+                <td><span class="label label-primary"><%= @vehicle.vehicle_type %></span></td>
                 <td><%= @vehicle.publication_day %></td>
               </tr>
             </tbody>
