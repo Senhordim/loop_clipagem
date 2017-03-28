@@ -13,11 +13,12 @@ class Ad::VehiclesController < ApplicationController
   end
 
   def create
+    binding.pry
     @vehicle = Vehicle.new(params_vehicle)
     if @vehicle.save
-      redirect_to [:ad, @vehicle], notice: 'Curso criado com sucesso.'
+      redirect_to [:ad, @vehicle], notice: 'Veículo criado com sucesso.'
     else
-
+      render :new
     end
   end
 
@@ -52,7 +53,7 @@ class Ad::VehiclesController < ApplicationController
       :state,
       :url,
       :address,
-      :publication_day
+      publication_day: []
     )
   end
 
