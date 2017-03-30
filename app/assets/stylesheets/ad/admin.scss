@@ -1,2 +1,37 @@
 body a { color:#444 }
 .top-buffer { margin-top:20px; }
+
+// radio inline
+
+label.radio_buttons {
+  display: block;
+}
+span.radio {
+  display: inline;
+  .radio_buttons {
+    margin-left: 0;
+
+  }
+
+  .collection_radio_buttons{
+    margin-right: 10px;
+  }
+}
+
+// check_boxes inline
+
+// label.check_boxes{
+//   display: block;
+// }
+
+// span.inline {
+//   display: inline;
+
+//   .check_boxes {
+//     margin-left: 0;
+//   }
+
+//   .collection_check_boxes{
+//     margin-right: 10px;
+//   }
+// }
