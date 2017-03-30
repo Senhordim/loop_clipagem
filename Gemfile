@@ -27,6 +27,9 @@ end
 gem "font-awesome-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap_sb_admin_base_v2'
+gem 'chosen-rails'
+gem 'bootstrap-chosen-rails'
+gem 'icheck-rails'
 
 gem 'simple_form'
 gem 'devise'
