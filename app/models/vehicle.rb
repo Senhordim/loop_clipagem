@@ -20,16 +20,13 @@ class Vehicle < ApplicationRecord
 
   has_many :publications
 
+  validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
+
   enumerize :vehicle_type, in: [:video, :audio, :printed, :web]
 
-  enumerize :publication_day, in: [
-    :seg,
-    :ter,
-    :qua,
-    :qui,
-    :sex,
-    :sab,
-    :dom
-  ]
+  def self.all_days_of_week
+    ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabádo", "Domingo"]
+  end
+
 
 end
