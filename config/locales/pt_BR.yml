@@ -25,6 +25,14 @@ pt-BR:
       show:
         back:  Voltar
         edit: Editar
+    publications:
+      index:
+        actions: Ações
+        links:
+          new: Nova publicação
+          remove: Remover publicação
+          edit: Editar publicação
+          view: Visualizar
   activerecord:
     models:
       vehicle: Veículo
@@ -47,3 +55,4 @@ pt-BR:
         status: Status
         page: Página
         link: Link da publicação
+        vehicle: Veículo
