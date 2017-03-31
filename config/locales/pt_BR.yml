@@ -19,6 +19,9 @@ pt-BR:
         actions: Ações
         links:
           new: Novo veículo
+          remove: Remover veículo
+          edit: Editar veículo
+          view: Visualizar
   activerecord:
     models:
       vehicle: Veículo

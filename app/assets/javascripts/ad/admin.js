@@ -14,4 +14,8 @@ $(function() {
 
 $(".chosen-select").chosen({no_results_text: "Oops, não encontrado!"});
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 
