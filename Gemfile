@@ -30,6 +30,7 @@ gem 'bootstrap_sb_admin_base_v2'
 gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 gem 'icheck-rails'
+gem 'summernote-rails'
 
 gem 'simple_form'
 gem 'devise'
