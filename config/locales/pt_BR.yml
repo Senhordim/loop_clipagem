@@ -1,0 +1,43 @@
+pt-BR:
+  enumerize:
+    vehicle:
+      vehicle_type:
+        video: Vídeo
+        audio: Áudio
+        printed: Impresso
+        web: Web
+  ad:
+    dashboard:
+      index:
+        panel: Painel
+    vehicles:
+      index:
+        name: Nome do veículo
+        vehicle_type: Tipo de veiculação
+        publication_day: Dias de publicação
+        created_at: Criado em
+        actions: Ações
+        links:
+          new: Novo veículo
+  activerecord:
+    models:
+      vehicle: Veículo
+      publication: Publicação
+      admin: Administrativo
+    attributes:
+      vehicle:
+        name: Nome
+        vehicle_type: Tipo de veiculação
+        national: Nacional?
+        country: País
+        state: Estado
+        url: Link do veículo
+        address:  Endereço
+        publication_day: Dias de publicação
+      publication:
+        title: Título
+        description: Descrição
+        archive: Arquivo
+        status: Status
+        page: Página
+        link: Link da publicação
