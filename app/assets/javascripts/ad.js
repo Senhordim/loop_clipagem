@@ -5,8 +5,7 @@
 //= require bootstrap-select
 //= require bootstrap-toggle
 //= require chosen-jquery
-//= require 'icheck'
-
+//= require summernote
 //= require ad/admin
 //
 //  your script here
