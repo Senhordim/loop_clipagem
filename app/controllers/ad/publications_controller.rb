@@ -14,6 +14,11 @@ class Ad::PublicationsController < ApplicationController
 
   def create
     @publication = Publication.new(params_publication)
+    if @publication.save
+      redirect_to [:ad, @publication], notice: 'Publicação criada com sucesso.'
+    else
+      render :new
+    end
   end
 
   def show
