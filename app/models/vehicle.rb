@@ -22,10 +22,18 @@ class Vehicle < ApplicationRecord
 
   validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
 
-  enumerize :vehicle_type, in: [:video, :audio, :printed, :web]
+  enumerize :vehicle_type, in: [ :video, :audio, :printed, :web]
 
   def self.all_days_of_week
-    ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabádo", "Domingo"]
+    [
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sabádo",
+      "Domingo"
+    ]
   end
 
 
