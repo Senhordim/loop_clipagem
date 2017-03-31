@@ -22,6 +22,9 @@ pt-BR:
           remove: Remover veículo
           edit: Editar veículo
           view: Visualizar
+      show:
+        back:  Voltar
+        edit: Editar
   activerecord:
     models:
       vehicle: Veículo
