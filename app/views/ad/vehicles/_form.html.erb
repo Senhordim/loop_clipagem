@@ -43,7 +43,7 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <%= f.input :publication_day, as: :check_boxes, item_wrapper_class: 'inline', input_html: { class: 'icheck-me', "data-skin": "square", "data-color": "blue"} %>
+      <%= f.input :publication_day, as: :check_boxes, collection: @days_of_week, item_wrapper_class: 'inline', input_html: { class: 'icheck-me', "data-skin": "square", "data-color": "blue"} %>
     </div>
   </div>
 
