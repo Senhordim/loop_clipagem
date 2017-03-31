@@ -23,4 +23,6 @@ RSpec.describe Vehicle, type: :model do
   it { should validate_presence_of(:country ) }
   it { should validate_presence_of(:state ) }
   it { should validate_presence_of(:publication_day ) }
+
+  it { is_expected.to have_any(:publications)}
 end
