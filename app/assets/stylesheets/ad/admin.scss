@@ -20,18 +20,18 @@ span.radio {
 
 // check_boxes inline
 
-// label.check_boxes{
-//   display: block;
-// }
+label.check_boxes{
+  display: block;
+}
 
-// span.inline {
-//   display: inline;
+span.inline {
+  display: inline;
 
-//   .check_boxes {
-//     margin-left: 0;
-//   }
+  .check_boxes {
+    margin-left: 0;
+  }
 
-//   .collection_check_boxes{
-//     margin-right: 10px;
-//   }
-// }
+  .collection_check_boxes{
+    margin-right: 10px;
+  }
+}
