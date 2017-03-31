@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     resources :vehicles
   end
 
-  get 'page/index'
-  root to: 'page#index'
+  namespace :site do
+    get 'page/index'
+  end
+
+
+  root to: 'site/page#index'
 
 end
