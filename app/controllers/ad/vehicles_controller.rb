@@ -3,6 +3,7 @@ class Ad::VehiclesController < ApplicationController
   layout "ad"
 
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  before_action :set_days_of_week, only: [:new, :edit]
 
   def index
     @vehicles = Vehicle.all
@@ -13,7 +14,6 @@ class Ad::VehiclesController < ApplicationController
   end
 
   def create
-    binding.pry
     @vehicle = Vehicle.new(params_vehicle)
     if @vehicle.save
       redirect_to [:ad, @vehicle], notice: 'Veículo criado com sucesso.'
@@ -39,6 +39,10 @@ class Ad::VehiclesController < ApplicationController
   end
 
   private
+
+  def set_days_of_week
+    @days_of_week = Vehicle.all_days_of_week
+  end
 
   def set_vehicle
     @vehicle = Vehicle.find(params[:id])
