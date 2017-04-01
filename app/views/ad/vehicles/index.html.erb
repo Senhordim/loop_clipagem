@@ -4,8 +4,6 @@
   </div>
 </div>
 
-
-
 <div class="row">
   <div class="col-lg-12">
     <div class="panel panel-default">
@@ -17,7 +15,9 @@
       <div class="row">
         <div class="col-lg-12">
            <div class="pull-right">
-          <%= link_to t('.links.new'), new_ad_vehicle_path, class: 'btn btn-primary' %>
+          <%= link_to  new_ad_vehicle_path, class: 'btn btn-primary' do %>
+            <i class="fa fa-plus" aria-hidden="true"></i> <%= t('.links.new') %>
+          <% end %>
         </div>
          </div>
       </div>
@@ -36,7 +36,17 @@
             <% @vehicles.each do |vehicle| %>
               <tr class="odd gradeX">
                 <td><%= vehicle.name %></td>
-                <td><span class="label label-success"><%= t vehicle.vehicle_type %></span></td>
+                <td>
+                  <span class="label label-success label-lg">
+                    <% if vehicle.vehicle_type == "audio" %>
+                      <i class="fa fa-headphones" aria-hidden="true"></i>
+                      <%= t vehicle.vehicle_type %>
+                    <% elsif vehicle.vehicle_type == "video" %>
+                      <i class="fa fa-video-camera" aria-hidden="true"></i>
+                      <%= t vehicle.vehicle_type %>
+                    <% end %>
+                  </span>
+                </td>
                 <td><%= vehicle.publication_day %></td>
                 <td class="center"><%= vehicle.created_at.strftime("%d/%m/%Y") %></td>
                 <td class="center">
