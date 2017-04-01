@@ -28,9 +28,16 @@ class Ad::PublicationsController < ApplicationController
   end
 
   def update
+    if @publication.update(params_publication)
+      redirect_to [:ad, @publication], notice: 'Publicação atualizada com sucesso!'
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @publication.destroy
+    redirect_to ad_publications_path, notice: 'Publicação removida com sucesso.'
   end
 
   private
