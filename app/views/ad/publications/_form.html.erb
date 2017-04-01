@@ -11,7 +11,7 @@
 
   <div class="row">
     <div class="col-lg-4">
-      <%= f.association :vehicle %>
+      <%= f.association :vehicle,  input_html: { class: 'chosen-select', "data-placeholder": "Escolha um veículo"} %>
     </div>
 
     <div class="col-lg-8">
@@ -21,13 +21,13 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <%= f.input :description, as: :summernote %>
+      <%= f.input :description, as: :summernote, input_html: { rows: "10" }%>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-6">
-      <%= f.input :status %>
+      <%= f.input :status, input_html: { class: 'chosen-select', "data-placeholder": "Escolha um status"} %>
     </div>
      <div class="col-lg-6">
       <%= f.input :archive, as: :file %>
