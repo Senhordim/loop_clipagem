@@ -18,7 +18,9 @@ $(function () {
 });
 
 $('[data-provider="summernote"]').each(function(){
-  $(this).summernote({ });
+  $(this).summernote({
+    height: 300
+  });
 })
 
 
