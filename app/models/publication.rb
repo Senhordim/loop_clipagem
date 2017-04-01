@@ -19,5 +19,11 @@
 #
 
 class Publication < ApplicationRecord
+  mount_uploader :archive, ArchiveUploader
+
+  extend Enumerize
+
   belongs_to :vehicle
+
+  enumerize :status, in: [ :public, :draft, :inactive]
 end
