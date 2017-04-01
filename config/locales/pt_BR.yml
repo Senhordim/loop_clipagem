@@ -6,6 +6,11 @@ pt-BR:
         audio: Áudio
         printed: Impresso
         web: Web
+    publication:
+      status:
+        public: Publico
+        draft: Rascunho
+        inactive: Inativo
   ad:
     dashboard:
       index:
@@ -23,8 +28,11 @@ pt-BR:
           edit: Editar veículo
           view: Visualizar
       show:
-        back:  Voltar
-        edit: Editar
+        links:
+          back:  Voltar
+          edit: Editar
+      new:
+        cancel: Cancelar
     publications:
       index:
         actions: Ações
