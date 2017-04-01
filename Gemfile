@@ -32,6 +32,7 @@ gem 'bootstrap-chosen-rails'
 gem 'icheck-rails'
 gem 'summernote-rails'
 
+
 gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n', '~> 5.0.0'
@@ -40,6 +41,10 @@ gem 'annotate'
 gem 'jquery-turbolinks'
 gem 'country_select'
 gem 'enumerize'
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
+gem 'figaro'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
