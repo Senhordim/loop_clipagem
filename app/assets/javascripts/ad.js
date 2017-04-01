@@ -6,6 +6,7 @@
 //= require bootstrap-toggle
 //= require chosen-jquery
 //= require summernote
+//= require ad/mediaelement-and-player.min
 //= require ad/admin
 //
 //  your script here
