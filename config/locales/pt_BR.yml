@@ -2,10 +2,10 @@ pt-BR:
   enumerize:
     vehicle:
       vehicle_type:
-        video: Vídeo
-        audio: Áudio
+        tv: Tv
+        radio: Rádio
         printed: Impresso
-        web: Web
+        online: Online
     publication:
       status:
         public: Publico
