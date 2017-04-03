@@ -36,11 +36,16 @@ pt-BR:
     publications:
       index:
         actions: Ações
+        created_at: Criado em
         links:
           new: Nova publicação
           remove: Remover publicação
           edit: Editar publicação
           view: Visualizar
+      show:
+        links:
+          back:  Voltar
+          edit: Editar
   activerecord:
     models:
       vehicle: Veículo
@@ -64,3 +69,4 @@ pt-BR:
         page: Página
         link: Link da publicação
         vehicle: Veículo
+        created_at: Criado em
