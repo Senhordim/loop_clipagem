@@ -38,12 +38,16 @@
                 <td><%= vehicle.name %></td>
                 <td>
 
-                    <% if vehicle.vehicle_type == "audio" %>
+                    <% if vehicle.vehicle_type == "radio" %>
                       <i class="fa fa-headphones" aria-hidden="true"></i>
                       <%= t vehicle.vehicle_type %>
-                    <% elsif vehicle.vehicle_type == "video" %>
-                      <i class="fa fa-video-camera" aria-hidden="true"></i>
+                    <% elsif vehicle.vehicle_type == "tv" %>
+                      <i class="fa fa-television" aria-hidden="true"></i>
                       <%= t vehicle.vehicle_type %>
+                    <% elsif vehicle.vehicle_type == "printed" %>
+                      A definir
+                    <% elsif vehicle.vehicle_type == "online" %>
+                       A definir
                     <% end %>
 
                 </td>

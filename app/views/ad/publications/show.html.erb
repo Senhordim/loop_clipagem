@@ -42,17 +42,17 @@
               <div class="tab-content">
                   <div class="tab-pane fade in active" id="clipping">
                     <br>
-                      <% if @publication.vehicle.vehicle_type == "video" %>
+                      <% if @publication.vehicle.vehicle_type == "tv" %>
                         <video width="640" height="267">
                           <source src= <%= "#{@publication.archive}" %> type="video/mp4">
                         </video>
-                      <% elsif  @publication.vehicle.vehicle_type == "audio" %>
+                      <% elsif  @publication.vehicle.vehicle_type == "radio" %>
                         <audio>
                           <source src= <%= "#{@publication.archive}" %> type="audio/mp3">
                         </audio>
                       <% elsif  @publication.vehicle.vehicle_type == "printed" %>
                         <%= @publication.archive %>
-                      <% elsif  @publication.vehicle.vehicle_type == "web" %>
+                      <% elsif  @publication.vehicle.vehicle_type == "online" %>
                         <%= @publication.archive %>
                       <% end %>
                     <hr>
