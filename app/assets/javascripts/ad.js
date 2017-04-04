@@ -6,11 +6,11 @@
 //= require bootstrap-toggle
 //= require chosen-jquery
 //= require summernote
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require ad/mediaelement-and-player.min
 //= require ad/admin
-//
-//  your script here
-//
+
 //= require turbolinks
 
 
