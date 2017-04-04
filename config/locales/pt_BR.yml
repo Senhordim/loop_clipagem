@@ -37,6 +37,7 @@ pt-BR:
       index:
         actions: Ações
         created_at: Criado em
+        date_of_publication: Publicado em
         links:
           new: Nova publicação
           remove: Remover publicação
@@ -64,6 +65,7 @@ pt-BR:
       publication:
         title: Título
         description: Descrição
+        date_of_publication: Data de Publicação
         archive: Arquivo
         status: Status
         page: Página
