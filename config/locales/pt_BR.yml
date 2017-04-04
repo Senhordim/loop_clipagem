@@ -37,7 +37,8 @@ pt-BR:
       index:
         actions: Ações
         created_at: Criado em
-        date_of_publication: Publicado em
+        publication_at: Publicado em
+        type_vehicle: Tipo de Veiculação
         links:
           new: Nova publicação
           remove: Remover publicação
