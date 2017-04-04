@@ -2,16 +2,17 @@
 #
 # Table name: publications
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  archive     :string
-#  status      :string
-#  page        :integer
-#  link        :string
-#  vehicle_id  :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                  :integer          not null, primary key
+#  title               :string
+#  description         :text
+#  archive             :string
+#  status              :string
+#  page                :integer
+#  link                :string
+#  vehicle_id          :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  date_of_publication :date
 #
 # Indexes
 #
@@ -26,4 +27,9 @@ class Publication < ApplicationRecord
   belongs_to :vehicle
 
   enumerize :status, in: [ :public, :draft, :inactive]
+
+  def to_param
+    [id, title.parameterize].join("-")
+  end
+
 end
