@@ -54,13 +54,13 @@
                 <td><%= vehicle.publication_day %></td>
                 <td class="center"><%= vehicle.created_at.strftime("%d/%m/%Y") %></td>
                 <td class="center">
-                  <%= link_to ad_vehicle_path(vehicle), class: 'btn btn-primary ', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.view") do %>
+                  <%= link_to ad_vehicle_path(vehicle), class: 'btn btn-default ', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.view") do %>
                     <i class="fa fa-eye"></i>
                   <% end %>
-                  <%= link_to edit_ad_vehicle_path(vehicle), class: 'btn btn-primary ' , "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.edit") do %>
+                  <%= link_to edit_ad_vehicle_path(vehicle), class: 'btn btn-default ' , "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.edit") do %>
                     <i class="fa fa-pencil"></i>
                   <% end %>
-                  <%= link_to ad_vehicle_path(vehicle), method: :delete, data: { confirm: "tem certeza?" }, class: 'btn  btn-danger', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.remove") do %>
+                  <%= link_to ad_vehicle_path(vehicle), method: :delete, data: { confirm: "tem certeza?" }, class: 'btn  btn-default', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.remove") do %>
                     <i class="fa fa-trash"></i>
                   <% end %>
                 </td>

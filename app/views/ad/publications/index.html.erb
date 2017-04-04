@@ -29,6 +29,7 @@
                 <th><%= t '.status' %></th>
                 <th><%= t '.created_at' %></th>
                 <th><%= t '.publication_at' %></th>
+                <th><%= t '.type_vehicle' %></th>
                 <th><%= t '.actions' %></th>
               </tr>
             </thead>
@@ -47,14 +48,15 @@
                   </td>
                   <td><%= publication.created_at.strftime("%d/%m/%Y") %></td>
                   <td><%= publication.date_of_publication.strftime("%d/%m/%Y") %></td>
+                  <td><%= t publication.vehicle.vehicle_type %></td>
                   <td class="center">
-                    <%= link_to ad_publication_path(publication), class: 'btn btn-primary ', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.view") do %>
+                    <%= link_to ad_publication_path(publication), class: 'btn btn-default ', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.view") do %>
                       <i class="fa fa-eye"></i>
                     <% end %>
-                    <%= link_to edit_ad_publication_path(publication), class: 'btn btn-primary ' , "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.edit") do %>
+                    <%= link_to edit_ad_publication_path(publication), class: 'btn btn-default ' , "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.edit") do %>
                       <i class="fa fa-pencil"></i>
                     <% end %>
-                    <%= link_to ad_publication_path(publication), method: :delete, data: { confirm: "tem certeza?" }, class: 'btn  btn-danger', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.remove") do %>
+                    <%= link_to ad_publication_path(publication), method: :delete, data: { confirm: "tem certeza?" }, class: 'btn btn-default', "data-toggle": "tooltip", "data-placement": "top", "title": t(".links.remove") do %>
                       <i class="fa fa-trash"></i>
                     <% end %>
                   </td>
