@@ -33,6 +33,7 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 gem 'icheck-rails'
 gem 'summernote-rails'
+gem 'bootstrap-datepicker-rails'
 
 
 gem 'simple_form'
