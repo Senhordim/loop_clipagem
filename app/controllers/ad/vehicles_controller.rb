@@ -6,7 +6,7 @@ class Ad::VehiclesController < ApplicationController
   before_action :set_days_of_week, only: [:new, :edit]
 
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.order('created_at DESC' ).page params[:page]
   end
 
   def new

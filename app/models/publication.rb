@@ -20,9 +20,12 @@
 #
 
 class Publication < ApplicationRecord
+
   mount_uploader :archive, ArchiveUploader
 
   extend Enumerize
+
+  paginates_per 7
 
   belongs_to :vehicle
 

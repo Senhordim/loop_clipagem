@@ -18,6 +18,8 @@
 class Vehicle < ApplicationRecord
   extend Enumerize
 
+  paginates_per 7
+
   has_many :publications
 
   validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
