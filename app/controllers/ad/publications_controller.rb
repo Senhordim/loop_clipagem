@@ -5,9 +5,8 @@ class Ad::PublicationsController < ApplicationController
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
 
   def index
-    @publications = Publication.all
+    @publications = Publication.order('created_at DESC' ).page params[:page]
   end
-
   def new
     @publication = Publication.new
   end
