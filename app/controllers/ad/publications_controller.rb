@@ -50,6 +50,7 @@ class Ad::PublicationsController < ApplicationController
     params.require(:publication).permit(
       :title,
       :description,
+      :date_of_publication,
       :archive,
       :status,
       :page,
