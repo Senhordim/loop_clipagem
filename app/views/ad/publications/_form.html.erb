@@ -10,11 +10,15 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-3">
       <%= f.association :vehicle,  input_html: { class: 'chosen-select', "data-placeholder": "Escolha um veículo"} %>
     </div>
 
-    <div class="col-lg-8">
+     <div class="col-lg-3">
+     <%= f.input :date_of_publication, as: :string, input_html: { "class": 'datepicker' } %>
+    </div>
+
+    <div class="col-lg-6">
       <%= f.input :title %>
     </div>
   </div>
