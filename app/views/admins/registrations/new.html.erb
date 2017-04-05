@@ -1,17 +1,26 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Acesso administrativo</h3>
+          </div>
+          <div class="panel-body">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+            <div class="brand-auth">
+              <%= image_tag 'ad/logo_loop_clipagem.jpg' %>
+            </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <fieldset>
+                <%= f.error_notification %>
+                <%= f.input :email, required: true, autofocus: true %>
+                <%= f.input :password, required: true, hint: ("#{@minimum_password_length} é o mínimo de caracteres permitido" if @minimum_password_length) %>
+                <%= f.input :password_confirmation, required: true %>
+                <%= f.button :submit, "Criar minha conta", class: 'btn btn-lg btn-outline btn-success btn-block' %><br>
+                <%= render "admins/shared/links" %>
+              </fieldset>
+            <% end %>
+          </div>
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>
