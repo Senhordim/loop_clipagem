@@ -20,12 +20,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
   gem 'rails-assets-ionicons'
   gem 'rails-assets-bootstrap-select'
   gem 'rails-assets-bootstrap-toggle'
 end
 
+gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap_sb_admin_base_v2'
