@@ -22,9 +22,12 @@ class Vehicle < ApplicationRecord
 
   has_many :publications
 
+  scope :by_name, -> (name) { where("name like ?", "%#{name}%") }
+  scope :by_type, -> (vehicle_type) { where("vehicle_type like ?", "%#{vehicle_type}%") }
+
   validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
 
-  enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online, :revista]
+  enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online, :magazine]
 
   def self.all_days_of_week
     [
