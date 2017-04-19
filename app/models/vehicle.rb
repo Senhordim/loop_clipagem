@@ -24,7 +24,7 @@ class Vehicle < ApplicationRecord
 
   validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
 
-  enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online]
+  enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online, :revista]
 
   def self.all_days_of_week
     [
