@@ -1,6 +1,4 @@
-class Ad::PublicationsController < ApplicationController
-
-  layout "ad"
+class Ad::PublicationsController < AdController
 
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
 

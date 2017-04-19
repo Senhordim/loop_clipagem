@@ -1,12 +1,13 @@
-class Ad::VehiclesController < ApplicationController
-
-  layout "ad"
+class Ad::VehiclesController < AdController
 
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
   before_action :set_days_of_week, only: [:new, :edit]
 
+  has_scope :by_name
+  has_scope :by_type
+
   def index
-    @vehicles = Vehicle.order('created_at DESC' ).page params[:page]
+    @vehicles = apply_scopes(Vehicle).order('created_at DESC' ).page params[:page]
   end
 
   def new
