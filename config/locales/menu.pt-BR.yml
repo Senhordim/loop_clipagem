@@ -6,4 +6,6 @@ pt-BR:
       list: Veículos
     publications:
       list: Publicações
+    admins:
+      list: Administradores
 
