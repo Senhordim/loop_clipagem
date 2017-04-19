@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :ad do
     get 'dashboard/index'
     root 'dashboard#index'
+    resources :admins, except: [:show]
     resources :vehicles
     resources :publications
   end
