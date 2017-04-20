@@ -60,14 +60,19 @@
 
                       <% if vehicle.vehicle_type == "radio" %>
                         <i class="fa fa-headphones" aria-hidden="true"></i>
-                        <%= t vehicle.vehicle_type %>
+                        Rádio
                       <% elsif vehicle.vehicle_type == "tv" %>
                         <i class="fa fa-television" aria-hidden="true"></i>
-                        <%= t vehicle.vehicle_type %>
+                        Tv
                       <% elsif vehicle.vehicle_type == "printed" %>
-                        A definir
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                        Impresso
+                      <% elsif vehicle.vehicle_type == "magazine" %>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        Revista
                       <% elsif vehicle.vehicle_type == "online" %>
-                         A definir
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        Online
                       <% end %>
 
                   </td>
