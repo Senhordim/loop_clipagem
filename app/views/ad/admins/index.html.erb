@@ -27,9 +27,11 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>Nome</th>
             <th>Email</th>
             <th>Criado em</th>
-            <th>ültimo login em</th>
+            <th>Último login em</th>
+            <th>Tipo de acesso</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -38,6 +40,7 @@
           <% @admins.each do |admin| %>
             <tr>
               <td><%= admin.id %></td>
+              <td><%= admin.name  %></td>
               <td><%= admin.email  %></td>
               <td><%= admin.created_at.strftime("%d/%m/%Y as %I:%M%p")  %></td>
               <td>
@@ -46,8 +49,8 @@
                 <% else %>
                   Nunca efetuou login
                 <% end %>
-
               </td>
+              <td><%= admin.role_br  %></td>
               <td>
                 <%= link_to edit_ad_admin_path(admin), class: 'btn btn-default' do %>
                   <i class="fa fa-edit"></i>
