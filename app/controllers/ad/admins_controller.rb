@@ -56,7 +56,7 @@ class Ad::AdminsController < AdController
     end
 
     def admin_params
-      params.require(:admin).permit(:email, :password, :password_confirmation)
+      params.require(:admin).permit(:name, :email, :password, :password_confirmation)
     end
 
 end
