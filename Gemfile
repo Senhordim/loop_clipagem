@@ -33,7 +33,6 @@ gem 'summernote-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-
 gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n', '~> 5.0.0'
@@ -44,6 +43,8 @@ gem 'country_select'
 gem 'enumerize'
 # gem 'carrierwave', '~> 1.0'
 gem 'carrierwave_direct'
+gem 'foreman'
+gem 'jquery_mask_rails' # more details at http://bit.ly/jquery-mask-gem
 
 gem 'fog-aws'
 gem 'figaro'
