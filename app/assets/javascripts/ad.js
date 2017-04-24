@@ -8,6 +8,8 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require bootbox
 //= require ad/mediaelement-and-player.min
+//= require jquery.mask
+//= require mask
 //= require ad/admin
 //= require ad/bootbox-rails
 
