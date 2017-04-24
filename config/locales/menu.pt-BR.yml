@@ -8,4 +8,6 @@ pt-BR:
       list: Publicações
     admins:
       list: Administradores
+    customers:
+      list: Clientes
 

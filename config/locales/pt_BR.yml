@@ -54,6 +54,7 @@ pt-BR:
       vehicle: Veículo
       publication: Publicação
       admin: Administrativo
+      customer: Cliente
     attributes:
       vehicle:
         name: Nome
@@ -73,4 +74,16 @@ pt-BR:
         page: Página
         link: Link da publicação
         vehicle: Veículo
+        created_at: Criado em
+      admins:
+        name: Nome
+        Role: Função
+        email: Email
+        created_at: Criado em
+      customers:
+        social_name: Razão Social
+        phone: Telefone
+        username: Login
+        Cnpj: CNPJ
+        email: Email
         created_at: Criado em
