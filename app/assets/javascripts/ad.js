@@ -6,8 +6,10 @@
 //= require summernote
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
+//= require bootbox
 //= require ad/mediaelement-and-player.min
 //= require ad/admin
+//= require ad/bootbox-rails
 
 //= require turbolinks
 
