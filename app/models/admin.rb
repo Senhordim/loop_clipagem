@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  name                   :string
+#  role                   :integer
 #
 # Indexes
 #
@@ -23,8 +25,20 @@
 #
 
 class Admin < ApplicationRecord
+
+  enum role: [:full_acess, :restrited_access]
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def role_br
+    if self.role == 'full_acess'
+      'Acesso completo'
+    else
+      'Acesso Restrito'
+    end
+  end
+
 end
