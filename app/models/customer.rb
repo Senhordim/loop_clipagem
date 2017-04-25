@@ -35,7 +35,11 @@ class Customer < ApplicationRecord
 
   mount_uploader :logo, LogoUploader
 
-  # accepts_nested_attributes_for :addresses, allow_destroy: true, reject_if: :all_blank
+  has_one :address, inverse_of: :customer
+
+  accepts_nested_attributes_for :address
+
+
 end
 
 
