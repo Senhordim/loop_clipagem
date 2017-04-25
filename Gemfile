@@ -47,6 +47,7 @@ gem 'foreman'
 gem 'jquery_mask_rails' # more details at http://bit.ly/jquery-mask-gem
 gem 'geocoder'
 gem 'gmaps4rails'
+gem "sentry-raven"
 
 gem 'fog-aws'
 gem 'figaro'
