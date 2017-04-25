@@ -10,6 +10,7 @@
 //= require ad/mediaelement-and-player.min
 //= require jquery.mask
 //= require mask
+//= require findAddress
 //= require ad/admin
 //= require ad/bootbox-rails
 
