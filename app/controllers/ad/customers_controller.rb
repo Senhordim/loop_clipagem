@@ -8,6 +8,7 @@ class Ad::CustomersController < AdController
 
   def new
     @customer = Customer.new
+    @customer.build_address
   end
 
   def create
@@ -41,7 +42,7 @@ class Ad::CustomersController < AdController
 
   def destroy
     if @customer.destroy
-      redirect_to bad_customers_path, notice: "Cliente removido com sucesso!"
+      redirect_to ad_customers_path, notice: "Cliente removido com sucesso!"
     else
       render :index
     end
@@ -62,7 +63,17 @@ class Ad::CustomersController < AdController
         :cnpj,
         :phone,
         :username,
-        :logo
+        :logo,
+        address_attributes: [
+          :street,
+          :neighborhood,
+          :zip_code,
+          :numb,
+          :complement,
+          :city,
+          :state,
+          :country
+        ]
         )
     end
 
