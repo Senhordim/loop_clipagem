@@ -39,6 +39,10 @@ class Customer < ApplicationRecord
 
   accepts_nested_attributes_for :address
 
+  scope :by_social_name, -> (social_name) { where("social_name like ?", "%#{social_name}%") }
+  scope :by_email, -> (email) { where("email like ?", "%#{email}%") }
+  scope :by_cnpj, -> (cnpj) { where("cnpj like ?", "%#{cnpj}%") }
+
 
 end
 
