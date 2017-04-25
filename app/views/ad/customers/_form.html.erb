@@ -4,12 +4,15 @@
     <div class="col-md-6">
       <% if f.object.logo? %>
         <%= image_tag f.object.logo.url %>
+        <%= f.input :logo, as: :file, label: 'Trocar logo do cliente' %>
+      <% else %>
+        <%= f.input :logo, as: :file %>
       <% end %>
     </div>
 
     <div class="col-md-6">
       <div class="pull-right">
-        <%= link_to 'Voltar', ad_admins_path, class: 'btn btn-default' %>
+        <%= link_to 'Voltar', ad_customers_path, class: 'btn btn-default' %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       </div>
     </div>
@@ -17,38 +20,68 @@
 
   <div class="row">
     <div class="col-md-6">
-      <%= f.input :social_name, input_html: {placeholder: 'Razão Social'} %>
+      <%= f.input :social_name, input_html: {placeholder: 'Razão social do cliente'} %>
     </div>
     <div class="col-md-3">
       <%= f.input :cnpj, input_html: {placeholder: 'CNPJ do cliente', class: 'cnpj-mask'} %>
     </div>
      <div class="col-md-3">
-      <%= f.input :phone, input_html: {placeholder: 'Telefone', class: 'phone-mask'} %>
+      <%= f.input :phone, input_html: {placeholder: 'Telefone de contato', class: 'phone-mask'} %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <%= f.input :username, input_html: { placeholder: 'Usuário para o cliente' } %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
       <%= f.input :email, input_html: {placeholder: 'Insira um email válido'} %>
     </div>
-  </div>
 
-  <div class="row">
     <div class="col-md-3">
       <%= f.input :password, input_html: {placeholder: 'Insira uma senha segura'} %>
     </div>
+
     <div class="col-md-3">
       <%= f.input :password_confirmation, input_html: {placeholder: 'Confirme aqui sua senha'} %>
     </div>
-    <div class="col-md-6">
-      <% if f.object.logo? %>
-        <%= f.input :logo, as: :file, label: 'Trocar logo do cliente' %>
-      <% else %>
-        <%= f.input :logo, as: :file %>
-      <% end %>
-    </div>
+
+  </div>
+    <%# f.object.address.build if f.object.address.blank? %>
+
+    <%= f.simple_fields_for :address do |a| %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= a.input :zip_code, input_html: { class: 'cep-mask', placeholder: 'CEP'} %>
+        </div>
+        <div class="col-md-7">
+          <%= a.input :street %>
+        </div>
+        <div class="col-md-2">
+          <%= a.input :numb %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= a.input :complement %>
+        </div>
+        <div class="col-md-6">
+          <%= a.input :neighborhood %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <%= a.input :city %>
+        </div>
+        <div class="col-md-4">
+          <%= a.input :state %>
+        </div>
+      </div>
+
+
+    <% end %>
+
   </div>
 <% end %>
