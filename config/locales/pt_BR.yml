@@ -75,15 +75,13 @@ pt-BR:
         link: Link da publicação
         vehicle: Veículo
         created_at: Criado em
-      admins:
-        name: Nome
-        Role: Função
-        email: Email
-        created_at: Criado em
-      customers:
-        social_name: Razão Social
-        phone: Telefone
-        username: Login
-        Cnpj: CNPJ
-        email: Email
-        created_at: Criado em
+      address:
+        street: Rua
+        neighborhood: Bairro
+        zip_code: CEP
+        numb: Número
+        complement: Complemento
+        city: Cidade
+        state: Estado
+        country: País
+
