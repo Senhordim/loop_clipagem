@@ -14,7 +14,29 @@
   <div class="panel-body">
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-8">
+        <%= form_tag ad_customers_path, :method => :get do %>
+          <div class="row">
+            <div class="col-md-3">
+              <%= text_field_tag :by_social_name, nil, :placeholder => "filtrar por Razão social", class: "form-control"  %>
+            </div>
+
+            <div class="col-md-3">
+              <%= text_field_tag :by_email, nil, :placeholder => "filtrar por email", class: "form-control"  %>
+            </div>
+
+            <div class="col-md-3">
+              <%= text_field_tag :by_cnpj, nil, :placeholder => "filtrar por CNPJ", class: "form-control"  %>
+            </div>
+
+            <div class="col-md-3">
+              <%= submit_tag "Aplicar filtro", class: 'btn btn-default'  %>
+              <%= link_to "Limpar", request.path, class: 'btn cancel-button'  %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4">
         <%= link_to new_ad_customer_path, class: 'btn btn-primary pull-right' do %>
           <i class="fa fa-plus"></i> Criar novo cliente
         <% end %>
@@ -29,7 +51,7 @@
             <th width="150px">Logo</th>
             <th>Razão social</th>
             <th>Email</th>
-            <th>Criado em</th>
+            <th>CNPJ</th>
             <th>Último login em</th>
             <th>Ações</th>
           </tr>
@@ -41,7 +63,7 @@
               <td><%= image_tag customer.logo.url, width: '100%' %></td>
               <td><%= customer.social_name  %></td>
               <td><%= customer.email  %></td>
-              <td><%= customer.created_at.strftime("%d/%m/%Y as %I:%M%p")  %></td>
+              <td><%= customer.cnpj  %></td>
               <td>
                 <% if customer.last_sign_in_at.present? %>
                   <%= customer.last_sign_in_at.strftime("%d/%m/%Y as %I:%M%p")  %>
