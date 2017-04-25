@@ -2,8 +2,12 @@ class Ad::CustomersController < AdController
 
   before_action :set_customer, only: [ :edit, :update, :destroy]
 
+  has_scope :by_social_name
+  has_scope :by_email
+  has_scope :by_cnpj
+
   def index
-    @customers = Customer.all
+    @customers = apply_scopes(Customer).order('created_at DESC' )
   end
 
   def new
