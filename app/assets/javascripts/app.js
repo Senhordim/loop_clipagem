@@ -21,7 +21,7 @@ $('[data-provider="summernote"]').each(function(){
   $(this).summernote({
     height: 300
   });
-})
+});
 
 $(document).ready(function(){
   $('.datepicker').datepicker({
