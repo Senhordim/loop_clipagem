@@ -7,14 +7,14 @@
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require bootbox
-//= require ad/mediaelement-and-player.min
 //= require jquery.mask
+//= require mediaelement-and-player.min
 //= require mask
 //= require findAddress
-//= require ad/admin
-//= require ad/bootbox-rails
-
+//= require bootbox-rails
+//= require ad/app
 //= require turbolinks
+
 
 
 
