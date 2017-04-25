@@ -45,6 +45,8 @@ gem 'enumerize'
 gem 'carrierwave_direct'
 gem 'foreman'
 gem 'jquery_mask_rails' # more details at http://bit.ly/jquery-mask-gem
+gem 'geocoder'
+gem 'gmaps4rails'
 
 gem 'fog-aws'
 gem 'figaro'
