@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
   // datepicker
-  $('.date-picker').datepicker({
-    format: 'dd/mm/yyyy',
-    language: 'pt-BR'
-  });
+  // $('.date-picker').datepicker({
+  //   format: 'dd/mm/yyyy',
+  //   language: 'pt-BR'
+  // });
 
   // summernote
   $('[data-provider="summernote"]').each(function(){
@@ -36,17 +36,6 @@ $(document).ready(function(){
     return setTimeout(flashCallback, 2500);
   });
 
-  // Media player
-  $('video').mediaelementplayer({
-    alwaysShowControls: false,
-    videoVolume: 'horizontal',
-    features: ['playpause','progress','volume','fullscreen']
-  });
-  $('audio').mediaelementplayer({
-    alwaysShowControls: false,
-    audioVolume: 'horizontal',
-    features: ['playpause','progress','volume','fullscreen']
-  });
 
 
 });
