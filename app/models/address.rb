@@ -23,7 +23,7 @@
 #
 
 class Address < ApplicationRecord
-  belongs_to :customer, inverse_of: :address
+  belongs_to :customer
 
   geocoded_by :full_address
 
@@ -33,5 +33,7 @@ class Address < ApplicationRecord
   def full_address
     [street, numb, city, state, country].compact.join(', ')
   end
+
+  validates_presence_of :street, :neighborhood, :zip_code, :numb, :city, :state
 
 end
