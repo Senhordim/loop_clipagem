@@ -11,7 +11,6 @@
 //= require mask
 //= require findAddress
 //= require bootbox-rails
-//= require mediaelement-and-player.min
 //= require app
 //= require turbolinks
 
