@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
   // datepicker
-  // $('.date-picker').datepicker({
-  //   format: 'dd/mm/yyyy',
-  //   language: 'pt-BR'
-  // });
+  $('.date-picker').datepicker({
+    format: 'dd/mm/yyyy',
+    language: 'pt-BR'
+  });
 
   // summernote
   $('[data-provider="summernote"]').each(function(){
@@ -14,29 +14,27 @@ $(document).ready(function(){
   });
 
   // Tooltip
-  $('[data-toggle="tooltip"]').tooltip()
+  // $('[data-toggle="tooltip"]').tooltip()
 
   // Chosen select
   $(".chosen-select").chosen({no_results_text: "Oops, não encontrado!"});
 
-  // Flash alert
-  $(function() {
-    var flashCallback;
+});
 
-    flashCallback = function() {
-        return $(".alert").fadeOut();
+// Flash alert
+$(function() {
+  var flashCallback;
+
+  flashCallback = function() {
+      return $(".alert").fadeOut();
+  };
+
+  $(".alert").bind('click', (function(_this) {
+    return function(ev) {
+      return $(".alert").fadeOut();
     };
+  })(this));
 
-    $(".alert").bind('click', (function(_this) {
-      return function(ev) {
-        return $(".alert").fadeOut();
-      };
-    })(this));
-
-    return setTimeout(flashCallback, 2500);
-  });
-
-
-
+  return setTimeout(flashCallback, 2500);
 });
 
