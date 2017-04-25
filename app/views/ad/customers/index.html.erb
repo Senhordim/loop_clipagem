@@ -63,7 +63,7 @@
               <td><%= image_tag customer.logo.url, width: '100%' %></td>
               <td><%= customer.social_name  %></td>
               <td><%= customer.email  %></td>
-              <td><%= customer.cnpj  %></td>
+              <td><%= customer.cnpj_formatado  %></td>
               <td>
                 <% if customer.last_sign_in_at.present? %>
                   <%= customer.last_sign_in_at.strftime("%d/%m/%Y as %I:%M%p")  %>
