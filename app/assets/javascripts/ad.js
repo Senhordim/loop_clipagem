@@ -8,11 +8,11 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR
 //= require bootbox
 //= require jquery.mask
-//= require mediaelement-and-player.min
 //= require mask
 //= require findAddress
 //= require bootbox-rails
-//= require ad/app
+//= require mediaelement-and-player.min
+//= require app
 //= require turbolinks
 
 
