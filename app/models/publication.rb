@@ -35,4 +35,6 @@ class Publication < ApplicationRecord
     [id, title.parameterize].join("-")
   end
 
+  validations_presence_of :title, :description, :status, :date_of_publication
+
 end
