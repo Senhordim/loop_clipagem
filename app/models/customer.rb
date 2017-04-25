@@ -35,7 +35,7 @@ class Customer < ApplicationRecord
 
   mount_uploader :logo, LogoUploader
 
-  has_one :address, inverse_of: :customer
+  has_one :address, dependent: :destroy
 
   accepts_nested_attributes_for :address
 
@@ -43,8 +43,11 @@ class Customer < ApplicationRecord
   scope :by_email, -> (email) { where("email like ?", "%#{email}%") }
   scope :by_cnpj, -> (cnpj) { where("cnpj like ?", "%#{cnpj}%") }
 
+  validates_presence_of :social_name, :cnpj, :phone, :username, :logo
+
+  def cnpj_formatado
+    cnpj.gsub(/\A(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})\Z/, "\\1.\\2.\\3/\\4-\\5")
+  end
 
 end
 
-
-# Razão Social, Endereço, Telefone, Email, Contato Direto, CNPJ, Login e a senha
