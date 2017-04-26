@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424221850) do
+ActiveRecord::Schema.define(version: 20170425205020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20170424221850) do
     t.integer  "role"
     t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "customer_publications", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "publication_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["customer_id"], name: "index_customer_publications_on_customer_id", using: :btree
+    t.index ["publication_id"], name: "index_customer_publications_on_publication_id", using: :btree
   end
 
   create_table "customers", force: :cascade do |t|
@@ -101,5 +110,7 @@ ActiveRecord::Schema.define(version: 20170424221850) do
   end
 
   add_foreign_key "addresses", "customers"
+  add_foreign_key "customer_publications", "customers"
+  add_foreign_key "customer_publications", "publications"
   add_foreign_key "publications", "vehicles"
 end
