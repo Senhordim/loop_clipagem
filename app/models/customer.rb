@@ -36,6 +36,7 @@ class Customer < ApplicationRecord
   mount_uploader :logo, LogoUploader
 
   has_one :address, dependent: :destroy
+  has_and_belongs_to_many :publications
 
   accepts_nested_attributes_for :address
 
@@ -44,6 +45,7 @@ class Customer < ApplicationRecord
   scope :by_cnpj, -> (cnpj) { where("cnpj like ?", "%#{cnpj}%") }
 
   validates_presence_of :social_name, :cnpj, :phone, :username, :logo
+  validates_uniqueness_of :username
 
   def cnpj_formatado
     cnpj.gsub(/\A(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})\Z/, "\\1.\\2.\\3/\\4-\\5")
