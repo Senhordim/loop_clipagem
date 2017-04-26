@@ -50,6 +50,7 @@
           <tr>
             <th width="150px">Logo</th>
             <th>Razão social</th>
+            <th>Login</th>
             <th>Email</th>
             <th>CNPJ</th>
             <th>Último login em</th>
@@ -62,6 +63,7 @@
             <tr>
               <td><%= image_tag customer.logo.url, width: '100%' %></td>
               <td><%= customer.social_name  %></td>
+              <td><%= customer.username  %></td>
               <td><%= customer.email  %></td>
               <td><%= customer.cnpj_formatado  %></td>
               <td>
