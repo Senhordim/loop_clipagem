@@ -28,6 +28,7 @@ class Publication < ApplicationRecord
   paginates_per 7
 
   belongs_to :vehicle
+  has_and_belongs_to_many :customers
 
   enumerize :status, in: [ :public, :draft, :inactive]
 
@@ -35,6 +36,6 @@ class Publication < ApplicationRecord
     [id, title.parameterize].join("-")
   end
 
-  validations_presence_of :title, :description, :status, :date_of_publication
+  validates_presence_of :title, :description, :status, :date_of_publication
 
 end
