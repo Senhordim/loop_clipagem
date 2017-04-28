@@ -58,8 +58,4 @@ class Ad::PublicationsController < AdController
     )
   end
   
-  def set_customers(customers)
-    binding.pry
-    
-  end
 end
