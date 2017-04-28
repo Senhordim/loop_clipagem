@@ -28,7 +28,8 @@ class Publication < ApplicationRecord
   paginates_per 7
 
   belongs_to :vehicle
-  has_and_belongs_to_many :customers
+  has_many :customer_publication
+  has_many :customers, through: :customer_publication
 
   enumerize :status, in: [ :public, :draft, :inactive]
 

@@ -7,6 +7,7 @@ class Ad::PublicationsController < AdController
   end
   def new
     @publication = Publication.new
+    @customers = Customer.all
   end
 
   def create
@@ -52,7 +53,9 @@ class Ad::PublicationsController < AdController
       :status,
       :page,
       :link,
-      :vehicle_id
+      :vehicle_id,
+      customer_ids: []
     )
   end
+  
 end

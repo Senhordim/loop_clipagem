@@ -29,6 +29,19 @@
 
 require 'rails_helper'
 
-RSpec.describe Customer, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Customer do
+  describe 'ralations' do
+      it{should have_one :address}
+      it{should have_many :customer_publication}
+      it{should have_many :publications}
+      it{should validate_presence_of :social_name}
+      it{should validate_presence_of :cnpj}
+      it{should validate_presence_of :phone}
+      it{should validate_presence_of :username}
+      it{should validate_uniqueness_of :username}
+      it{should validate_presence_of :logo}
+      it{should accept_nested_attributes_for :address}
+  end
 end
+
+

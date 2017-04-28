@@ -36,7 +36,8 @@ class Customer < ApplicationRecord
   mount_uploader :logo, LogoUploader
 
   has_one :address, dependent: :destroy
-  has_and_belongs_to_many :publications
+  has_many :customer_publication
+  has_many :publications, through: :customer_publication
 
   accepts_nested_attributes_for :address
 
