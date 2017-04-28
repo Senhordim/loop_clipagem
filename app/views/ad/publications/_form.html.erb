@@ -48,5 +48,12 @@
     </div>
 
   </div>
+  
+  <div class='row'>
+    <div class='col-lg-6 col-sm-6'>
+      Publicar para:
+      <%= f.collection_check_boxes :customer_ids, @customers, :id, :username %>
+    </div>
+  </div>
 
 <% end %>
