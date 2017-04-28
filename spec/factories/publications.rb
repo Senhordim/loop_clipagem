@@ -27,6 +27,5 @@ FactoryGirl.define do
     status "MyString"
     page 1
     link "MyString"
-    vehicle nil
   end
 end
