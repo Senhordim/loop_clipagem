@@ -30,7 +30,6 @@ gem 'chosen-rails'
 gem 'bootstrap-chosen-rails'
 gem 'icheck-rails'
 gem 'summernote-rails'
-gem 'bootstrap-datepicker-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'simple_form'
@@ -48,6 +47,8 @@ gem 'jquery_mask_rails' # more details at http://bit.ly/jquery-mask-gem
 gem 'geocoder'
 gem 'gmaps4rails'
 gem "sentry-raven"
+gem 'enum_help'
+gem "pundit"
 
 gem 'fog-aws'
 gem 'figaro'
