@@ -1,0 +1,11 @@
+"pt-BR":
+  enums:
+    vehicle:
+      publication_day:
+        monday: Segunda
+        tuesday: Terça
+        wednesday: Quarta
+        thursday: Quinta
+        friday: Sexta
+        saturday: Sabado
+        sunday: Domingo
