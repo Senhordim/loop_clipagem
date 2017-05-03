@@ -46,11 +46,32 @@
                     <h5><%= @publication.vehicle.name %></h5>
                     <br>
                       <% if @publication.vehicle.vehicle_type == "tv" %>
-                        <video width="640" height="267">
-                          <source src= <%= "#{@publication.archive}" %> type="video/mp4">
-                        </video>
+
+                      <video
+                        id="my-player"
+                        class="video-js"
+                        controls
+                        preload="auto"
+                        poster="//vjs.zencdn.net/v/oceans.png"
+                        data-setup='{}'>
+
+                        <source src= <%= "#{@publication.archive}" %> type="video/mp4">
+                        <p class="vjs-no-js">
+                          To view this video please enable JavaScript, and consider upgrading to a
+                          web browser that
+                          <a href="http://videojs.com/html5-video-support/" target="_blank">
+                          supports HTML5 video
+                          </a>
+                        </p>
+
+                      </video>
                       <% elsif  @publication.vehicle.vehicle_type == "radio" %>
-                        <audio>
+                        <audio
+                          id="audio_example"
+                          class="video-js"
+                          controls
+                          preload="auto"
+                          data-setup='{}'>
                           <source src= <%= "#{@publication.archive}" %> type="audio/mp3">
                         </audio>
                       <% elsif  @publication.vehicle.vehicle_type == "printed" %>

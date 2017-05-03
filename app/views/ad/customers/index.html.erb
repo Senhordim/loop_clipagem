@@ -26,11 +26,11 @@
             </div>
 
             <div class="col-md-3">
-              <%= text_field_tag :by_cnpj, nil, :placeholder => "filtrar por CNPJ", class: "form-control"  %>
+              <%= text_field_tag :by_cnpj, nil, :placeholder => "filtrar por CNPJ", class: "form-control cnpj-mask"  %>
             </div>
 
             <div class="col-md-3">
-              <%= submit_tag "Aplicar filtro", class: 'btn btn-default'  %>
+              <%= submit_tag "Aplicar", class: 'btn btn-default'  %>
               <%= link_to "Limpar", request.path, class: 'btn cancel-button'  %>
             </div>
           </div>

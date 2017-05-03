@@ -15,7 +15,7 @@
     </div>
 
      <div class="col-lg-3">
-     <%= f.input :date_of_publication, as: :string, input_html: { "class": 'date-picker' } %>
+     <%= f.input :date_of_publication, as: :string, input_html: { "class": 'date-picker', value: Time.now.strftime('%d-%m-%Y') } %>
     </div>
 
     <div class="col-lg-6">
@@ -48,11 +48,15 @@
     </div>
 
   </div>
-  
+
   <div class='row'>
     <div class='col-lg-6 col-sm-6'>
-      Publicar para:
-      <%= f.collection_check_boxes :customer_ids, @customers, :id, :username %>
+      <div class="form-group">
+        Publicar para:
+        <%= f.collection_check_boxes :customer_ids, @customers, :id, :social_name do |b| %>
+           <%=  b.check_box(class: "check_box") + " " + b.text  %>
+        <% end %>
+      </div>
     </div>
   </div>
 
