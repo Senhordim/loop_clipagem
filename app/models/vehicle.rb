@@ -23,7 +23,7 @@ class Vehicle < ApplicationRecord
 
   has_many :publications
 
-  scope :by_name, -> (name) { where("name like ?", "%#{name}%") }
+  scope :by_name, -> (name) { where("lower(name) like ?", "%#{name}%".downcase)}
   scope :by_type, -> (vehicle_type) { where("vehicle_type like ?", "%#{vehicle_type}%") }
 
   validates_presence_of :name, :vehicle_type, :country, :state

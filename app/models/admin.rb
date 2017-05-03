@@ -33,6 +33,8 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  scope :by_name, -> (name) { where("lower(name) like ?", "%#{name}%".downcase) }
+
   def role_br
     if self.role == 'full_acess'
       'Acesso completo'
