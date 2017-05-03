@@ -9,3 +9,8 @@
         friday: Sexta
         saturday: Sabado
         sunday: Domingo
+    admin:
+      role:
+        full_acess: Acesso completo
+        restrited_access: Acesso restrito
+
