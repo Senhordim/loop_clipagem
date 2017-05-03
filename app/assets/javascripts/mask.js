@@ -18,7 +18,7 @@ $(document).ready(function(){
   $('.phone-mask').mask(SPMaskBehavior, spOptions);
 
 
-  $('#new_customer').submit(function() {
+  $('form').submit(function() {
     $('.phone-mask').unmask();
     $('.cnpj-mask').unmask();
   });
