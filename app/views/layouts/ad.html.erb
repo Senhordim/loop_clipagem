@@ -8,6 +8,7 @@
   <meta name="author" content="">
   <title>Loop Clipagem - Administrativo </title>
   <%= stylesheet_link_tag    'ad', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="//vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet">
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -44,6 +45,21 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'ad', 'data-turbolinks-track' => true %>
+  <script src="//vjs.zencdn.net/5.11/video.min.js"></script>
+  <script>
+    var options = {};
+    var player = videojs('my-player', options, function onPlayerReady() {
+      videojs.log('Your player is ready!');
+
+      // In this context, `this` is the player that was created by Video.js.
+      this.play();
+
+      // How about an event listener?
+      this.on('ended', function() {
+        videojs.log('Awww...over so soon?!');
+      });
+    });
+  </script>
 
 </body>
 </html>
