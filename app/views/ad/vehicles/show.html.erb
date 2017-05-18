@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header"><%= @vehicle.name %></h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            Criado em: <%= @vehicle.created_at.strftime("%d/%m/%Y")  %>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="pull-right">
+
+                <%= link_to ad_vehicles_path, class: 'btn btn-default' do %>
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i> <%= t ".back" %>
+                <% end %>
+
+                <%= link_to edit_ad_vehicle_path, class: 'btn btn-primary' do %>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= t ".edit" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+           <br>
+          <table width="100%" class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Dias de publicação </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="label label-primary"><%= t @vehicle.vehicle_type %></span></td>
+                <td><%= @vehicle.publication_day %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table width="100%" class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Nacional</th>
+                <th>País </th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <% if @vehicle.national? %>
+                    <span class="label label-success">Sim</span>
+                  <% else %>
+                    <span class="label label-default">Não</span>
+                  <% end %>
+                </td>
+                <td><%= @vehicle.country %></td>
+                <td><%= @vehicle.state   %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table width="100%" class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Link</th>
+                <th>Endereço do site</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= @vehicle.url.present? ? @vehicle.url : "Não informado" %>
+                </td>
+                <td>
+                  <%= @vehicle.address.present? ? @vehicle.address : "Não informado" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+

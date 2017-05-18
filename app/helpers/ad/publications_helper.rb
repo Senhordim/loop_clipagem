@@ -1,0 +1,2 @@
+module Ad::PublicationsHelper
+end

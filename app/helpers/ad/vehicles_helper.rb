@@ -1,0 +1,2 @@
+module Ad::VehiclesHelper
+end

@@ -1,0 +1,13 @@
+pt-BR:
+  menu:
+    dasboard:
+      panel: Painel de controle
+    vehicles:
+      list: Veículos
+    publications:
+      list: Publicações
+    admins:
+      list: Administradores
+    customers:
+      list: Clientes
+

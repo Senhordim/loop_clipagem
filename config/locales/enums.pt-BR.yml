@@ -1,0 +1,16 @@
+"pt-BR":
+  enums:
+    vehicle:
+      publication_day:
+        monday: Segunda
+        tuesday: Terça
+        wednesday: Quarta
+        thursday: Quinta
+        friday: Sexta
+        saturday: Sabado
+        sunday: Domingo
+    admin:
+      role:
+        full_acess: Acesso completo
+        restrited_access: Acesso restrito
+

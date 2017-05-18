@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <%= link_to ad_root_path, class: 'navbar-brand' do %>
+          <%= image_tag 'ad/logo_loop_clipagem.jpg', height: '30px' %>
+        <% end %>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i> Olá <%= current_admin.name %> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <%= link_to edit_ad_admin_path(current_admin.id) do %>
+                  <i class="fa fa-gear fa-fw"></i> Configurações
+                <% end %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to destroy_admin_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out fa-fw"></i> Sair
+                <% end %>
+              </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
+
+    <%= render 'layouts/shared_ad/sidebar' %>
+</nav>
