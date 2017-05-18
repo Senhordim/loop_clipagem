@@ -17,12 +17,7 @@ $(document).ready(function(){
 
   $('.phone-mask').mask(SPMaskBehavior, spOptions);
 
-
-<<<<<<< HEAD
   $('form').submit(function() {
-=======
-  $('#new_customer').submit(function() {
->>>>>>> df5741926067601d9d61d28aadcea8e8b7c37b02
     $('.phone-mask').unmask();
     $('.cnpj-mask').unmask();
   });

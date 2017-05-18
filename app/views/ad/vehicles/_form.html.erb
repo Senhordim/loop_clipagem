@@ -43,7 +43,6 @@
 
   <div class="row">
     <div class="col-lg-6">
-<<<<<<< HEAD
 
       <% if f.object.publication_day? %>
        <p><b>Dias de publicação:</b> <br> <%= f.object.publication_day %></p>
@@ -51,11 +50,6 @@
       <% else %>
          <%= f.input :publication_day, as: :check_boxes, collection: @days_of_week, item_wrapper_class: 'inline', input_html: { class: 'icheck-me'} %>
       <% end %>
-
-
-=======
-      <%= f.input :publication_day, as: :check_boxes, collection: @days_of_week, item_wrapper_class: 'inline', input_html: { class: 'icheck-me', "data-skin": "square", "data-color": "blue"} %>
->>>>>>> df5741926067601d9d61d28aadcea8e8b7c37b02
     </div>
   </div>
 
