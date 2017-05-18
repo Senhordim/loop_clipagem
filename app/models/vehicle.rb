@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  name            :string
 #  vehicle_type    :string
-#  national        :boolean          default("true")
+#  national        :boolean          default(TRUE)
 #  country         :string
 #  state           :string
 #  url             :string
@@ -27,6 +27,10 @@ class Vehicle < ApplicationRecord
   scope :by_type, -> (vehicle_type) { where("vehicle_type like ?", "%#{vehicle_type}%") }
 
   validates_presence_of :name, :vehicle_type, :country, :state
+  scope :by_name, -> (name) { where("name like ?", "%#{name}%") }
+  scope :by_type, -> (vehicle_type) { where("vehicle_type like ?", "%#{vehicle_type}%") }
+
+  validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
 
   enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online, :magazine]
 

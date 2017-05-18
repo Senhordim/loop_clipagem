@@ -64,5 +64,4 @@ class Ad::PublicationsController < AdController
       uploaded_files_attributes: [:title, :decription, :archve, :_destroy]
     )
   end
-
 end
