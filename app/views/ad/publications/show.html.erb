@@ -46,11 +46,31 @@
                     <h5><%= @publication.vehicle.name %></h5>
                     <br>
                       <% if @publication.vehicle.vehicle_type == "tv" %>
-                        <video width="640" height="267">
-                          <source src= <%= "#{@publication.archive}" %> type="video/mp4">
-                        </video>
+                      <video
+                        id="my-player"
+                        class="video-js"
+                        controls
+                        preload="auto"
+                        poster="//vjs.zencdn.net/v/oceans.png"
+                        data-setup='{}'>
+
+                        <source src= <%= "#{@publication.archive}" %> type="video/mp4">
+                        <p class="vjs-no-js">
+                          To view this video please enable JavaScript, and consider upgrading to a
+                          web browser that
+                          <a href="http://videojs.com/html5-video-support/" target="_blank">
+                          supports HTML5 video
+                          </a>
+                        </p>
+
+                      </video>
                       <% elsif  @publication.vehicle.vehicle_type == "radio" %>
-                        <audio>
+                        <audio
+                          id="audio_example"
+                          class="video-js"
+                          controls
+                          preload="auto"
+                          data-setup='{}'>
                           <source src= <%= "#{@publication.archive}" %> type="audio/mp3">
                         </audio>
                       <% elsif  @publication.vehicle.vehicle_type == "printed" %>
@@ -60,8 +80,10 @@
                       <% end %>
                     <hr>
                     <%= raw @publication.description %>
-                    <%= link_to @publication.archive.url, class: 'btn btn-outline btn-default btn-sm' do %>
-                      <i class="fa fa-download" aria-hidden="true"></i> Baixar arquivo
+                    <% @publication.uploaded_files.each do |file| %>
+                         <%= link_to file.archive.url, class: 'btn btn-outline bt btn-sm' do %>
+                           <p><%= file.title %></p><i class="fa fa-download" aria-hidden="true"></i> Baixar arquivo
+                         <% end %>
                     <% end %>
                   </div>
                   <div class="tab-pane fade" id="resume">
@@ -91,9 +113,11 @@
                               <i class="fa fa-calendar" aria-hidden="true"></i>
                                 <%= @publication.date_of_publication.strftime("%d/%m/%Y") %></td>
                             <td>
-                              <%= link_to @publication.archive.url, class: 'btn btn-outline btn-default btn-sm' do %>
-                                <i class="fa fa-download" aria-hidden="true"></i> Baixar arquivo
-                              <% end %>
+                              <% @publication.uploaded_files.each do |file| %>
+                                  <%= link_to file.archive.url, class: 'btn btn-outline btn-default btn-sm' do %>
+                                    <i class="fa fa-download" aria-hidden="true"></i> Baixar arquivo
+                                  <% end %>
+                             <% end %>
                             </td>
                           </tr>
                         </tbody>

@@ -8,7 +8,7 @@
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  sign_in_count          :integer          default("0"), not null
+#  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
@@ -36,6 +36,13 @@ class Customer < ApplicationRecord
   mount_uploader :logo, LogoUploader
 
   has_one :address, dependent: :destroy
+  has_many :customer_publication
+  has_many :publications, through: :customer_publication
+
+  accepts_nested_attributes_for :address
+
+  scope :by_social_name, -> (social_name) { where("lower(social_name) like ?", "%#{social_name}%".downcase) }
+  scope :by_email, -> (email) { where("lower(email) like ?", "%#{email}%".downcase)}
   has_and_belongs_to_many :publications
 
   accepts_nested_attributes_for :address

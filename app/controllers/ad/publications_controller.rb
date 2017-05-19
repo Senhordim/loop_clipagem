@@ -1,12 +1,14 @@
 class Ad::PublicationsController < AdController
 
   before_action :set_publication, only: [:show, :edit, :update, :destroy]
+  before_action :set_all_customer, only: [:new, :edit]
 
   def index
     @publications = Publication.order('created_at DESC' ).page params[:page]
   end
   def new
     @publication = Publication.new
+    @file = UploadedFile.new
   end
 
   def create
@@ -39,6 +41,11 @@ class Ad::PublicationsController < AdController
 
   private
 
+  def set_all_customer
+    @customers = Customer.all
+    @files = UploadedFile.all
+  end
+
   def set_publication
     @publication = Publication.find(params[:id])
   end
@@ -52,7 +59,9 @@ class Ad::PublicationsController < AdController
       :status,
       :page,
       :link,
-      :vehicle_id
+      :vehicle_id,
+      customer_ids: [],
+      uploaded_files_attributes: [:title, :decription, :archve, :_destroy]
     )
   end
 end

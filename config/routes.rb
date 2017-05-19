@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :admins, except: [:show]
     resources :vehicles
     resources :publications
+    resources :uploaded_files
 
   end
 

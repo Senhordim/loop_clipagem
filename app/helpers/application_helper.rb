@@ -34,4 +34,16 @@ module ApplicationHelper
     options_for_select(ESTADOS_BRASILEIROS, selected)
   end
 
+  DaysOfTheWeek = Struct.new(:id, :description)
+
+  def options_for_publication_days
+    options = []
+
+    Vehicle.publication_days_i18n.each do |key, value|
+      options.push(DaysOfTheWeek.new(key, value))
+    end
+
+    options
+
+  end
 end

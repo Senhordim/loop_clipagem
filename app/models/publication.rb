@@ -20,14 +20,16 @@
 #
 
 class Publication < ApplicationRecord
-
-  mount_uploader :archive, ArchiveUploader
-
   extend Enumerize
 
   paginates_per 7
 
   belongs_to :vehicle
+  has_many :customer_publication
+  has_many :customers, through: :customer_publication
+  has_many :uploaded_files, dependent: :destroy
+
+  accepts_nested_attributes_for :uploaded_files, reject_if: :all_blank, allow_destroy: true
   has_and_belongs_to_many :customers
 
   enumerize :status, in: [ :public, :draft, :inactive]

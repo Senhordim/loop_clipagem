@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-6">
       <% if f.object.logo? %>
-        <%= image_tag f.object.logo.url %>
+        <%= image_tag f.object.logo.url, width: '40%' %>
         <%= f.input :logo, as: :file, label: 'Trocar logo do cliente' %>
       <% else %>
         <%= f.input :logo, as: :file %>
