@@ -60,8 +60,13 @@ class Ad::PublicationsController < AdController
       :page,
       :link,
       :vehicle_id,
+<<<<<<< HEAD
       customer_ids: [],
       uploaded_files_attributes: [:title, :decription, :archve, :_destroy]
+=======
+      customer_ids: []
+>>>>>>> master
     )
   end
+
 end

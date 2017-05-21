@@ -43,4 +43,3 @@ describe Customer do
       it{should accept_nested_attributes_for :address}
   end
 end
-
