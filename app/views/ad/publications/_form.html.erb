@@ -66,6 +66,8 @@
           <% end %>
         <% else %>
           <p>Nenhum cliente cadastrado ainda</p>
+        <%= f.collection_check_boxes :customer_ids, @customers, :id, :social_name do |b| %>
+           <%=  b.check_box(class: "check_box") + " " + b.text  %>
         <% end %>
       </div>
     </div>

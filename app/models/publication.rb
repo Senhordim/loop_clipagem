@@ -27,10 +27,13 @@ class Publication < ApplicationRecord
   belongs_to :vehicle
   has_many :customer_publication
   has_many :customers, through: :customer_publication
+<<<<<<< HEAD
   has_many :uploaded_files, dependent: :destroy
 
   accepts_nested_attributes_for :uploaded_files, reject_if: :all_blank, allow_destroy: true
   has_and_belongs_to_many :customers
+=======
+>>>>>>> master
 
   enumerize :status, in: [ :public, :draft, :inactive]
 

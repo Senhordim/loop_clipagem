@@ -117,15 +117,16 @@ ActiveRecord::Schema.define(version: 20170518134436) do
   create_table "vehicles", force: :cascade do |t|
     t.string   "name"
     t.string   "vehicle_type"
-    t.boolean  "national",        default: true
+    t.boolean  "national",                                default: true
     t.string   "country"
     t.string   "state"
     t.string   "url"
     t.string   "address"
     t.string   "publication_day"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.integer  "publication"
+    t.decimal  "price",           precision: 8, scale: 2
   end
 
   add_foreign_key "addresses", "customers"

@@ -14,6 +14,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  publication     :integer
+#  price           :decimal(8, 2)
 #
 
 class Vehicle < ApplicationRecord
@@ -30,7 +31,7 @@ class Vehicle < ApplicationRecord
   scope :by_name, -> (name) { where("name like ?", "%#{name}%") }
   scope :by_type, -> (vehicle_type) { where("vehicle_type like ?", "%#{vehicle_type}%") }
 
-  validates_presence_of :name, :vehicle_type, :country, :state, :publication_day
+  validates_presence_of :name, :vehicle_type, :country, :state
 
   enumerize :vehicle_type, in: [ :tv, :radio, :printed, :online, :magazine]
 

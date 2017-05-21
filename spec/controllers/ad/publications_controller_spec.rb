@@ -23,6 +23,14 @@ RSpec.describe Ad::PublicationsController, type: :controller do
       @client2 = create(:customer, cnpj: '84675142000149')
       @client3 = create(:customer, cnpj: '77867381000135')
     end
+
+    it "create a new Publication" do
+      
+      @publication = Publication.new(title: 'Publication teste', description: 'low description about it', date_of_publication: Time.now,
+                                    status: 2, page: 1, link: 'www.google.com', customer_ids: [@client.id, @client2.id, @client3.id])
+      
+      expect(@publication).to be_valid
+    end
     
     it "create a new Publication" do
       

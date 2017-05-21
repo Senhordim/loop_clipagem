@@ -61,6 +61,7 @@ class Ad::VehiclesController < AdController
       :state,
       :url,
       :address,
+      :price,
       publication_day: []
     )
   end
