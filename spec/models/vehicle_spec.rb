@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  name            :string
 #  vehicle_type    :string
-#  national        :boolean          default("true")
+#  national        :boolean          default(TRUE)
 #  country         :string
 #  state           :string
 #  url             :string

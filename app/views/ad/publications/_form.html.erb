@@ -33,9 +33,16 @@
     <div class="col-lg-6">
       <%= f.input :status, input_html: { class: 'chosen-select', "data-placeholder": "Escolha um status"} %>
     </div>
+    <div class="files">
      <div class="col-lg-6">
-      <%= f.input :archive, as: :file %>
+       <p>Arquivos<p>
+       <%= f.simple_fields_for :uploaded_files do |builder| %>
+         <% render 'uploaded_file_fields', f: builder %>
+      <% end %>
     </div>
+  </div>
+  <%= link_to_add_association 'Adicionar arquivo', f, :uploaded_files, class: 'btn btn-primary', data: {
+    association_insertation_node: '.files', association_insertation_method: :append } %>
   </div>
 
   <div class="row">
@@ -53,11 +60,16 @@
     <div class='col-lg-6 col-sm-6'>
       <div class="form-group">
         Publicar para:
+        <% if @customers %>
+          <%= f.collection_check_boxes :customer_ids, @customers, :id, :social_name do |b| %>
+             <%=  b.check_box(class: "check_box") + " " + b.text  %>
+          <% end %>
+        <% else %>
+          <p>Nenhum cliente cadastrado ainda</p>
         <%= f.collection_check_boxes :customer_ids, @customers, :id, :social_name do |b| %>
            <%=  b.check_box(class: "check_box") + " " + b.text  %>
         <% end %>
       </div>
     </div>
   </div>
-
 <% end %>

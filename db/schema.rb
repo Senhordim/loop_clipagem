@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515193701) do
+ActiveRecord::Schema.define(version: 20170518134436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,15 @@ ActiveRecord::Schema.define(version: 20170515193701) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "publication_uploaded_files", force: :cascade do |t|
+    t.integer  "publication_id"
+    t.integer  "uploaded_file_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["publication_id"], name: "index_publication_uploaded_files_on_publication_id", using: :btree
+    t.index ["uploaded_file_id"], name: "index_publication_uploaded_files_on_uploaded_file_id", using: :btree
+  end
+
   create_table "publications", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -94,6 +103,15 @@ ActiveRecord::Schema.define(version: 20170515193701) do
     t.datetime "updated_at",          null: false
     t.date     "date_of_publication"
     t.index ["vehicle_id"], name: "index_publications_on_vehicle_id", using: :btree
+  end
+
+  create_table "uploaded_files", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "archive"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "publication_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -114,5 +132,7 @@ ActiveRecord::Schema.define(version: 20170515193701) do
   add_foreign_key "addresses", "customers"
   add_foreign_key "customer_publications", "customers"
   add_foreign_key "customer_publications", "publications"
+  add_foreign_key "publication_uploaded_files", "publications"
+  add_foreign_key "publication_uploaded_files", "uploaded_files"
   add_foreign_key "publications", "vehicles"
 end

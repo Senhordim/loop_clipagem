@@ -8,6 +8,7 @@ class Ad::PublicationsController < AdController
   end
   def new
     @publication = Publication.new
+    @file = UploadedFile.new
   end
 
   def create
@@ -42,6 +43,7 @@ class Ad::PublicationsController < AdController
 
   def set_all_customer
     @customers = Customer.all
+    @files = UploadedFile.all
   end
 
   def set_publication
@@ -58,7 +60,12 @@ class Ad::PublicationsController < AdController
       :page,
       :link,
       :vehicle_id,
+<<<<<<< HEAD
+      customer_ids: [],
+      uploaded_files_attributes: [:title, :decription, :archve, :_destroy]
+=======
       customer_ids: []
+>>>>>>> master
     )
   end
 

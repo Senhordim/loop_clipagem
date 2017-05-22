@@ -49,7 +49,8 @@ gem 'gmaps4rails'
 gem "sentry-raven"
 gem 'enum_help'
 gem "pundit"
-
+gem 'react-rails'
+gem 'cocoon'
 gem 'fog-aws'
 gem 'figaro'
 gem 'rmagick'
